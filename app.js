@@ -356,10 +356,10 @@ Properties: ${starredProps.map((p) => p.address).join(", ")}`);
   const clearList = () => setStarred(/* @__PURE__ */ new Set());
   const SortHeader = ({ k, label }) => /* @__PURE__ */ React.createElement("th", { onClick: () => handleSort(k), className: "px-1 py-1.5 lg:px-2 lg:py-2.5 text-left text-[10px] lg:text-xs font-semibold cursor-pointer hover:bg-navy-light select-none whitespace-nowrap" }, label, " ", sortKey === k ? sortDir === 1 ? "\u25B2" : "\u25BC" : "");
   if (appPhase === "guide") {
-    return /* @__PURE__ */ React.createElement(IntroOverlay, { onClose: () => setAppPhase("rotate") });
+    return /* @__PURE__ */ React.createElement(IntroOverlay, { onClose: () => setAppPhase("app") });
   }
   if (appPhase === "rotate") {
-    return /* @__PURE__ */ React.createElement(RotatePrompt, { onContinue: () => setAppPhase("app") });
+    return /* @__PURE__ */ React.createElement(RotatePrompt, { onContinue: () => setAppPhase("guide") });
   }
   if (!allData) {
     return /* @__PURE__ */ React.createElement("div", { className: "fixed inset-0 bg-navy flex flex-col items-center justify-center" }, /* @__PURE__ */ React.createElement(Logo, { size: 60, className: "mb-4 opacity-80" }), /* @__PURE__ */ React.createElement("div", { className: "text-gold font-bold text-sm mb-2" }, "Loading properties..."), /* @__PURE__ */ React.createElement("div", { style: { width: 100, height: 3, background: "#2C3E6B", borderRadius: 3, overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: { width: "40%", height: "100%", background: "#D4A843", borderRadius: 3, animation: "loadbar 1.2s ease-in-out infinite" } })), /* @__PURE__ */ React.createElement("style", null, "@keyframes loadbar{0%{width:10%;margin-left:0}50%{width:50%;margin-left:25%}100%{width:10%;margin-left:90%}}"));
