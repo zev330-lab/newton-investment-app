@@ -215,7 +215,7 @@ const App = () => {
     minROI: 0,
     search: ""
   });
-  const [appPhase, setAppPhase] = useState("guide");
+  const [appPhase, setAppPhase] = useState("app");
   const [sortKey, setSortKey] = useState("investmentScore");
   const [sortDir, setSortDir] = useState(-1);
   const [expandedId, setExpandedId] = useState(null);
